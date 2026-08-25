@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#08101f" />
-  <meta name="description" content="2077년, 게이트와 에고 웨폰이 공존하는 세계. 아르케온 에고 웨폰 아카데미 세계관 소개." />
-  <title>에고 웨폰 아카데미 | World Guide</title>
+  <meta name="theme-color" content="#08111f" />
+  <meta name="description" content="에고 웨폰 아카데미 세계관 아카이브 — 2077년, 게이트와 에고 웨폰이 일상이 된 한국." />
+  <title>에고 웨폰 아카데미 | World Archive</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="page-noise" aria-hidden="true"></div>
+
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="맨 위로">
-      <span class="brand-mark">E</span>
-      <span><b>EGO WEAPON</b><small>ARCHEON ACADEMY</small></span>
+    <a class="brand" href="#top" aria-label="에고 웨폰 아카데미 홈">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span class="brand-copy">
+        <strong>ARCHEON</strong>
+        <small>WORLD ARCHIVE · 2077</small>
+      </span>
     </a>
-    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="siteNav">MENU</button>
-    <nav class="site-nav" id="siteNav">
+    <nav class="main-nav" aria-label="주요 메뉴">
       <a href="#world">세계</a>
       <a href="#ego">에고 웨폰</a>
       <a href="#command">명령</a>
@@ -26,183 +29,88 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-image" role="img" aria-label="아르케온 아카데미 학장 레오니아"></div>
-      <div class="hero-shade"></div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-content reveal">
-        <p class="eyebrow">2077 · SEOUL · MODERN FANTASY ACADEMY</p>
-        <h1>상상핔 무기가,<br><em>당신의 자아</em>가 된다.</h1>
-        <p class="hero-copy">게이트 발생 50년 후. 모든 신입생은 똑같은 F급 코어 하나에서 시작한다. 형태도, 이름도, 명령도 정해져 있지 않다.</p>
+        <p class="kicker">2077 · SEOUL · MODERN FANTASY</p>
+        <h1 id="hero-title">에고 웨폰<br><span>아카데미</span></h1>
+        <p class="hero-lead">게이트 발생 50년 후. 모든 신입생은 이름도 형태도 없는<br class="desktop-only" /> 하나의 F급 코어에서 시작한다.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#ego">세계관 시작하기</a>
-          <a class="button ghost" href="#characters">주요 인물 보기</a>
+          <a class="button primary" href="#world">세계관 읽기</a>
+          <a class="button ghost" href="#characters">주요 인물</a>
         </div>
+        <dl class="hero-facts" aria-label="핵심 설정">
+          <div><dt>FIRST GATE</dt><dd>2027</dd></div><div><dt>PRESENT</dt><dd>2077</dd></div><div><dt>RANK</dt><dd>F → SSS</dd></div><div><dt>CONTRACT</dt><dd>1 : 1</dd></div>
+        </dl>
       </div>
-      <div class="hero-stats reveal">
-        <div><strong>2027</strong><span>최초 게이트</span></div>
-        <div><strong>2077</strong><span>현재 시점</span></div>
-        <div><strong>F → SSS</strong><span>통합 등급</span></div>
-        <div><strong>1 : 1</strong><span>계약자 : 에고 웨폰</span></div>
+      <div class="core-stage reveal delay-1" aria-label="F급 에고 웨폰 코어 시각화">
+        <div class="core-orbit orbit-a"></div><div class="core-orbit orbit-b"></div><div class="core-orbit orbit-c"></div><div class="core-glow"></div><div class="core-sphere"></div>
+        <div class="core-label"><span>INITIAL STATE</span><strong>F-RANK CORE</strong><small>FORM · NAME · COMMAND / UNDEFINED</small></div>
       </div>
     </section>
 
-    <section class="section world" id="world">
-      <div class="section-heading reveal">
-        <p class="eyebrow">01 · WORLD</p>
-        <h2>게이트가 일상이 된 한국</h2>
-        <p>스마트폰과 인터넷, 현대 도시가 그대로 존재하는 2077년. 달라진 것은 세상 곳곳에 게이트가 열린다는 사실뿐이다.</p>
-      </div>
-      <div class="timeline reveal">
-        <article><span>2027</span><h3>최초 게이트 발생</h3><p>마수와 미지의 공간이 현실에 출현한다.</p></article>
-        <article><span>+ 50 YEARS</span><h3>기술의 정착</h3><p>코어 연구가 발전하고 인공 에고 웨폰 코어 제작이 가능해진다.</p></article>
-        <article><span>2077</span><h3>헌터의 시대</h3><p>게이트 클리어와 브레이크 대응은 전문 헌터의 일상이 된다.</p></article>
-      </div>
-      <div class="world-grid reveal">
-        <article class="info-card danger">
-          <div class="icon">7D</div><h3>브레이크</h3>
-          <p>게이트를 7일 이내 클리어하지 못하면 내부 마수가 현실로 쏟아져 나온다.</p>
-        </article>
-        <article class="info-card">
-          <div class="icon">◇</div><h3>마석</h3>
-          <p>마수 처치 후 얻는 핵심 연구 자원. 낮은 등급의 마수도 일반인에게는 치명적이다.</p>
-        </article>
-        <article class="info-card">
-          <div class="icon">?</div><h3>미지의 내부</h3>
-          <p>동굴, 숲, 사막, 바다. 게이트 내부 환경은 조사 전까지 누구도 확신할 수 없다.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section ego" id="ego">
-      <div class="section-heading reveal">
-        <p class="eyebrow">02 · EGO WEAPON</p>
-        <h2>모두 같은 코어.<br>결과는 전부 다르다.</h2>
-      </div>
-      <div class="core-layout">
-        <div class="core-visual reveal" aria-hidden="true">
-          <div class="core-ring ring-a"></div><div class="core-ring ring-b"></div><div class="core-sphere"></div>
-          <p>F-RANK<br>EGO CORE</p>
+    <section class="archive-section" id="world">
+      <div class="section-heading reveal"><p class="section-index">01 / WORLD</p><h2>게이트가 열린 뒤에도<br>세상은 계속 굴러간다.</h2><p>2077년의 한국은 스마트폰과 인터넷, 현대 도시가 그대로 존재한다. 달라진 것은 도시 어딘가에 게이트가 열리고, 그것을 처리하는 헌터가 하나의 직업이 되었다는 사실이다.</p></div>
+      <div class="world-layout">
+        <div class="timeline reveal"><div class="timeline-line" aria-hidden="true"></div>
+          <article><span>2027</span><h3>최초 게이트 발생</h3><p>현실과 단절된 초자연적 공간이 출현한다. 내부에는 인간에게 적대적인 마수가 존재한다.</p></article>
+          <article><span>+ 50 YEARS</span><h3>코어 기술 정착</h3><p>게이트에서 발견된 코어 연구가 축적되며 인공 에고 웨폰 코어 제작이 가능해진다.</p></article>
+          <article><span>2077</span><h3>헌터의 시대</h3><p>게이트 클리어와 브레이크 대응은 전문 헌터의 일상이 되고, 아카데미가 다음 세대를 교육한다.</p></article>
         </div>
-        <div class="core-copy reveal">
-          <p class="lead">손바닥 크기의 구체를 쥐고 원하는 무기를 상상한다. 검, 총, 활, 사슬, 낫—선택한 계통은 평생의 정체성이 된다.</p>
-          <div class="rule-list">
-            <div><b>01</b><span><strong>형태 지정</strong>상상한 무기에 가깝게 코어가 구현된다.</span></div>
-            <div><b>02</b><span><strong>계약 성립</strong>무기가 완성되는 순간 1인 1에고 웨폰 계약이 시작된다.</span></div>
-            <div><b>03</b><span><strong>명명과 보관</strong>이름을 붙이고 액세서리·소지품 형태로 보관한다.</span></div>
-            <div><b>04</b><span><strong>성장</strong>전투, 경험, 명령, 자아가 쌓이며 등급이 오른다.</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="ego-stage reveal">
-        <div><span>1</span><b>의식</b><small>단순 반응 · 단어</small></div>
-        <i></i><div><span>2</span><b>자아</b><small>감정 · 짧은 문장</small></div>
-        <i></i><div><span>3</span><b>사고</b><small>자연스러운 대화</small></div>
-        <i></i><div><span>4</span><b>인격</b><small>독립적 성격과 가치관</small></div>
-      </div>
-    </section>
-
-    <section class="section command" id="command">
-      <div class="section-heading reveal">
-        <p class="eyebrow">03 · COMMAND</p>
-        <h2>스킬은 주어지지 않는다.<br><em>직접 명령한다.</em></h2>
-        <p>에고 웨폰에는 미리 정해진 스킬 목록이 없다. 계약자가 직접 소리로 명령하고, 무기가 그 행동에 성공하면 새로운 F급 명령으로 등록된다.</p>
-      </div>
-      <div class="command-demo reveal">
-        <div class="command-screen">
-          <span class="scanline"></span>
-          <small>VOICE INPUT / CONTRACTOR ONLY</small>
-          <strong>“쫓아.”</strong>
-          <p>COMMAND REGISTERED</p>
-          <code>쫓아 [F / 0%]</code>
-        </div>
-        <div class="command-rules">
-          <p><b>말 · 휘파람</b><span>직접 발생시킨 음성 또는 소리만 인정</span></p>
-          <p><b>생각 · 문자 · 손짓</b><span>명령 신호로 인정되지 않음</span></p>
-          <p><b>독립 성장</b><span>웨폰 등급과 명령 등급은 서로 다르게 성장 가능</span></p>
-          <p><b>성능 한계</b><span>명령이 강해도 현재 웨폰 자체의 물리적 한계는 넘지 못함</span></p>
+        <div class="gate-cards">
+          <article class="info-card reveal delay-1"><div class="card-icon gate-icon" aria-hidden="true"></div><p class="mono-label">GATE</p><h3>미지의 내부</h3><p>동굴, 숲, 사막, 바다. 내부 환경은 조사 전까지 알 수 없다. 기본 클리어 조건은 보스 마수 처치.</p></article>
+          <article class="info-card reveal delay-2"><div class="card-icon seven-icon" aria-hidden="true">7D</div><p class="mono-label">BREAK</p><h3>7일의 제한</h3><p>발생 후 7일 이내 클리어하지 못하면 남은 마수들이 현실로 쏟아져 나온다.</p></article>
+          <article class="info-card reveal delay-3"><div class="card-icon shard-icon" aria-hidden="true"></div><p class="mono-label">MANA STONE</p><h3>마석</h3><p>마수 처치 후 얻는 중요한 연구 자원. 낮은 등급의 마수도 일반인에게는 충분히 위험하다.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section academy" id="academy">
-      <div class="section-heading reveal">
-        <p class="eyebrow">04 · ARCHEON ACADEMY</p>
-        <h2>아르케온 에고 웨폰 아카데미</h2>
-        <p>서울 외곽. 만 19세 이상만 입학하는 3년제 헌터 교육기관. 입학식에서 신입생 전원에게 동일한 F급 인공 코어가 지급된다.</p>
+    <section class="archive-section system-section" id="ego">
+      <div class="section-heading reveal"><p class="section-index">02 / EGO WEAPON</p><h2>정답이 없는 무기.</h2><p>코어를 쥔 적성자가 원하는 무기를 상상한다. 한 번 정해진 기본 계통은 평생의 정체성이 되고, 에고 웨폰은 계약자와 함께 성장한다.</p></div>
+      <div class="process reveal" aria-label="에고 웨폰 생성 과정">
+        <article><span>01</span><strong>코어</strong><p>모든 신규 코어는 F급</p></article><i aria-hidden="true"></i><article><span>02</span><strong>형태 지정</strong><p>원하는 무기 계통 구현</p></article><i aria-hidden="true"></i><article><span>03</span><strong>계약</strong><p>구현 순간 1:1 계약 성립</p></article><i aria-hidden="true"></i><article><span>04</span><strong>명명</strong><p>에고 웨폰에 이름 부여</p></article><i aria-hidden="true"></i><article><span>05</span><strong>보관 형태</strong><p>작은 소지품으로 휴대</p></article><i aria-hidden="true"></i><article><span>06</span><strong>성장</strong><p>전투 · 경험 · 명령 · 자아</p></article>
       </div>
-      <div class="academy-numbers reveal">
-        <article><strong>3</strong><span>년제</span></article>
-        <article><strong>100</strong><span>명 / 학년</span></article>
-        <article><strong>4</strong><span>개 반</span></article>
-        <article><strong>25</strong><span>명 / 반</span></article>
-        <article><strong>1–100</strong><span>학년 랭킹</span></article>
+      <div class="ego-detail-grid">
+        <article class="detail-panel reveal"><p class="mono-label">FORM RULE</p><h3>계통은 고정, 진화는 가능</h3><p>검으로 시작했다면 검 계통 안에서 성장한다. 다른 무기 계통으로 갈아타는 것은 불가능하며, 현재 등급을 넘어서는 터무니없는 크기와 질량도 구현할 수 없다.</p></article>
+        <article class="detail-panel reveal delay-1"><p class="mono-label">STORAGE</p><h3>일상 속에 숨은 무기</h3><p>팔찌, 귀걸이, 목걸이, 라이터 같은 작은 소지품으로 변환해 휴대한다. 전투 형태와 보관 형태의 변환은 계약자가 직접 쥐고 있을 때 가능하다.</p></article>
+        <article class="detail-panel reveal delay-2"><p class="mono-label">AUTONOMY</p><h3>자유롭게 날아다니지 않는다</h3><p>기본적으로 독립형 생명체가 아니다. 다만 활성화된 명령을 수행하는 동안에는 필요한 범위 안에서 자력 이동이 가능하다.</p></article>
       </div>
-      <div class="gate-practice reveal">
-        <div class="grade-card"><small>1학년</small><strong>MAX C</strong><p>기초 조작 · 첫 명령 · 기본 전투</p></div>
-        <div class="grade-card"><small>2학년</small><strong>MAX B</strong><p>응용 · 팀 전투 · 게이트 실전</p></div>
-        <div class="grade-card"><small>3학년</small><strong>MAX A</strong><p>고난도 실전 · 지휘 · 특수 임무</p></div>
-      </div>
-      <div class="first-class reveal">
-        <span>FIRST CLASS</span>
-        <div><h3>첫 명령 등록 실습</h3><p>강한 명령 하나를 만드는 수업이 아니다. 자신의 에고 웨폰이 ‘명령’을 어떻게 이해하는지 처음 알아가는 시간이다.</p></div>
+      <div class="ego-ladder reveal"><div class="ladder-copy"><p class="section-index">EGO DEVELOPMENT</p><h3>무기는 점점 ‘누군가’가 된다.</h3><p>자아는 계약자와 함께한 경험을 중심으로 성장한다.</p></div><div class="ladder-steps"><article><span>1</span><strong>의식</strong><small>단순 반응 · 단어</small></article><article><span>2</span><strong>자아</strong><small>감정 · 짧은 문장</small></article><article><span>3</span><strong>사고</strong><small>자연스러운 대화</small></article><article><span>4</span><strong>인격</strong><small>성격 · 가치관</small></article></div></div>
+    </section>
+
+    <section class="archive-section command-section" id="command">
+      <div class="command-layout"><div class="section-heading reveal"><p class="section-index">03 / COMMAND</p><h2>스킬 목록은 없다.<br><span>직접 명령한다.</span></h2><p>계약자가 직접 발생시킨 음성이나 소리가 명령의 시작이다. 성공한 행동은 F급 명령으로 등록되고, 이후 별도의 등급과 숙련도로 성장한다.</p><div class="command-rules"><div><strong>말 · 휘파람</strong><span>명령 신호로 인정</span></div><div><strong>생각 · 문자 · 손짓</strong><span>명령으로 인정되지 않음</span></div><div><strong>계약자 전용</strong><span>다른 사람의 소리는 명령권 없음</span></div><div><strong>독립 성장</strong><span>웨폰 등급과 명령 등급은 별개</span></div></div></div>
+        <div class="command-console reveal delay-1" aria-label="명령 등록 예시"><div class="console-top"><span></span><span></span><span></span><b>ARCHEON / COMMAND TEST</b></div><div class="console-body"><p class="console-dim">VOICE INPUT DETECTED</p><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="command-quote">“쫓아.”</p><p class="console-success">COMMAND REGISTERED</p><div class="registered-command"><strong>쫓아</strong><span>[ F / 0% ]</span></div><p class="console-note">※ 현재 에고 웨폰의 형태와 성능으로 실제 수행 가능한 행동만 등록 가능</p></div></div>
       </div>
     </section>
 
-    <section class="section characters" id="characters">
-      <div class="section-heading reveal">
-        <p class="eyebrow">05 · CHARACTERS</p>
-        <h2>아르케온의 사람들</h2>
-        <p>같은 코어에서 출발했지만, 선택한 무기와 살아온 방식은 모두 다르다.</p>
-      </div>
-      <div class="filters reveal" role="group" aria-label="인물 필터">
-        <button class="filter active" data-filter="all">전체</button>
-        <button class="filter" data-filter="first">1학년</button>
-        <button class="filter" data-filter="faculty">교수진</button>
-        <button class="filter" data-filter="senior">상급생</button>
-      </div>
+    <section class="archive-section academy-section" id="academy">
+      <div class="section-heading reveal"><p class="section-index">04 / ARCHEON ACADEMY</p><h2>아르케온 에고 웨폰 아카데미</h2><p>서울 외곽. 만 19세 이상이 입학하는 3년제 헌터 교육기관. 모든 신입생은 입학식에서 동일한 F급 인공 코어를 지급받는다.</p></div>
+      <div class="academy-stats reveal"><div><strong>3</strong><span>년제</span></div><div><strong>100</strong><span>명 / 학년</span></div><div><strong>4</strong><span>개 반</span></div><div><strong>25</strong><span>명 / 반</span></div><div><strong>1—100</strong><span>학년 랭킹</span></div><div><strong>5</strong><span>인 / 게이트 팀</span></div></div>
+      <div class="academy-grid"><article class="year-card reveal"><span>1학년</span><strong>MAX C</strong><p>에고 웨폰 기초 조작 · 첫 명령 · 기본 전투 · 게이트 기초 실습</p></article><article class="year-card reveal delay-1"><span>2학년</span><strong>MAX B</strong><p>명령 응용 · 팀 전투 · 대인전 · 고급 운용 · 게이트 실전</p></article><article class="year-card reveal delay-2"><span>3학년</span><strong>MAX A</strong><p>고난도 실전 · 지휘 · 특수 임무 · 고위 게이트 대응</p></article></div>
+      <article class="first-class reveal"><div><span>FIRST CLASS</span><strong>첫 명령 등록 실습</strong></div><p>강한 명령 하나를 만드는 수업이 아니다. 자신의 에고 웨폰이 ‘명령’을 어떻게 이해하는지 처음 확인하는 시간이다.</p></article>
+    </section>
+
+    <section class="archive-section character-section" id="characters">
+      <div class="section-heading character-heading reveal"><div><p class="section-index">05 / PEOPLE</p><h2>아르케온의 사람들</h2></div><p>이미지를 누르면 상세 프로필을 확인할 수 있다.</p></div>
+      <div class="character-tabs reveal" role="group" aria-label="인물 필터"><button class="active" data-filter="all">전체</button><button data-filter="freshman">1학년</button><button data-filter="staff">교수진 · 학장</button><button data-filter="senior">상급생</button></div>
       <div class="character-grid">
-        <article class="character-card reveal" data-group="first">
-          <img src="assets/characters/han-seoyoon.jpg" alt="한서윤" loading="lazy"><div class="character-overlay"><small>1학년 · 입학시험 1위</small><h3>한서윤</h3><p>장검 <b>무명</b> · “베어”</p><span>무뚝뚝 · 차분 · 승부욕</span></div>
-        </article>
-        <article class="character-card reveal" data-group="first">
-          <img src="assets/characters/kang-serin.jpg" alt="강세린" loading="lazy"><div class="character-overlay"><small>1학년</small><h3>강세린</h3><p>대검 <b>브레이커</b> · “밀어붙어”</p><span>쾌활 · 운동계 · 전투광</span></div>
-        </article>
-        <article class="character-card reveal" data-group="first">
-          <img src="assets/characters/baek-yuna.jpg" alt="백유나" loading="lazy"><div class="character-overlay"><small>1학년</small><h3>백유나</h3><p>사슬 <b>바인드</b> · “묶어”</p><span>장난기 · 친화력 · 제어형</span></div>
-        </article>
-        <article class="character-card reveal" data-group="first">
-          <img src="assets/characters/cha-yerin.jpg" alt="차예린" loading="lazy"><div class="character-overlay"><small>1학년</small><h3>차예린</h3><p>권총 <b>제로</b> · “맞춰”</p><span>무감정 · 차가움 · 과묵</span></div>
-        </article>
-        <article class="character-card reveal" data-group="first">
-          <img src="assets/characters/seo-arin.jpg" alt="서아린" loading="lazy"><div class="character-overlay"><small>1학년</small><h3>서아린</h3><p>레이피어 <b>피어스</b> · “꿰뚫어”</p><span>우아 · 차분 · 높은 자존심</span></div>
-        </article>
-        <article class="character-card reveal" data-group="faculty">
-          <img src="assets/characters/yoon-gayoung.jpg" alt="윤가영" loading="lazy"><div class="character-overlay"><small>교수 · 실전 전투 / 게이트 실습</small><h3>윤가영</h3><p>S급 장창 <b>임페일</b></p><span>엄격 · 냉정 · 실전주의</span></div>
-        </article>
-        <article class="character-card reveal" data-group="faculty">
-          <img src="assets/characters/seo-yuhwa.jpg" alt="서유화" loading="lazy"><div class="character-overlay"><small>교수 · 명령 등록 / 제어</small><h3>서유화</h3><p>S급 대낫 <b>카니지</b></p><span>평소 다정 · 전투 시 극도로 공격적</span></div>
-        </article>
-        <article class="character-card reveal featured" data-group="faculty">
-          <img src="assets/characters/leonia.jpg" alt="레오니아" loading="lazy"><div class="character-overlay"><small>학장</small><h3>레오니아</h3><p>SS급 초대형 닻 <b>리바이어던</b></p><span>느긋 · 관대 · 학생 안전에는 철저</span></div>
-        </article>
-        <article class="character-card reveal" data-group="senior">
-          <img src="assets/characters/yuria.jpg" alt="유리아" loading="lazy"><div class="character-overlay"><small>2학년</small><h3>유리아</h3><p>B급 활 <b>아르테미스</b></p><span>착함 · 다정 · 후배를 좋아함</span></div>
-        </article>
+        <button class="character-card reveal" data-group="freshman" data-character="han" aria-label="한서윤 상세 보기"><span class="character-portrait sprite sprite-0" role="img" aria-label="한서윤"></span><span class="character-shade"></span><span class="character-role">1학년 · 입학시험 1위</span><span class="character-name">한서윤</span><span class="character-weapon">무명 · 장검 · “베어”</span></button>
+        <button class="character-card reveal delay-1" data-group="freshman" data-character="kang" aria-label="강세린 상세 보기"><span class="character-portrait sprite sprite-1" role="img" aria-label="강세린"></span><span class="character-shade"></span><span class="character-role">1학년</span><span class="character-name">강세린</span><span class="character-weapon">브레이커 · 대검 · “밀어붙어”</span></button>
+        <button class="character-card reveal delay-2" data-group="freshman" data-character="baek" aria-label="백유나 상세 보기"><span class="character-portrait sprite sprite-2" role="img" aria-label="백유나"></span><span class="character-shade"></span><span class="character-role">1학년</span><span class="character-name">백유나</span><span class="character-weapon">바인드 · 사슬 · “묶어”</span></button>
+        <button class="character-card reveal" data-group="freshman" data-character="cha" aria-label="차예린 상세 보기"><span class="character-portrait sprite sprite-3" role="img" aria-label="차예린"></span><span class="character-shade"></span><span class="character-role">1학년</span><span class="character-name">차예린</span><span class="character-weapon">제로 · 권총 · “맞춰”</span></button>
+        <button class="character-card reveal delay-1" data-group="freshman" data-character="arin" aria-label="서아린 상세 보기"><span class="character-portrait sprite sprite-4" role="img" aria-label="서아린"></span><span class="character-shade"></span><span class="character-role">1학년</span><span class="character-name">서아린</span><span class="character-weapon">피어스 · 레이피어 · “꿰뚫어”</span></button>
+        <button class="character-card reveal delay-2" data-group="staff" data-character="gayoung" aria-label="윤가영 상세 보기"><span class="character-portrait sprite sprite-5" role="img" aria-label="윤가영"></span><span class="character-shade"></span><span class="character-role">교수 · 실전 전투 / 게이트 실습</span><span class="character-name">윤가영</span><span class="character-weapon">임페일 · S급 장창</span></button>
+        <button class="character-card reveal" data-group="staff" data-character="yuhwa" aria-label="서유화 상세 보기"><span class="character-portrait sprite sprite-6" role="img" aria-label="서유화"></span><span class="character-shade"></span><span class="character-role">교수 · 명령 등록 / 명령 제어</span><span class="character-name">서유화</span><span class="character-weapon">카니지 · S급 대낫</span></button>
+        <button class="character-card reveal delay-1" data-group="staff" data-character="leonia" aria-label="레오니아 상세 보기"><span class="character-portrait sprite sprite-7" role="img" aria-label="레오니아"></span><span class="character-shade"></span><span class="character-role">학장</span><span class="character-name">레오니아</span><span class="character-weapon">리바이어던 · SS급 초대형 닻</span></button>
+        <button class="character-card reveal delay-2" data-group="senior" data-character="yuria" aria-label="유리아 상세 보기"><span class="character-portrait sprite sprite-8" role="img" aria-label="유리아"></span><span class="character-shade"></span><span class="character-role">2학년</span><span class="character-name">유리아</span><span class="character-weapon">아르테미스 · B급 활</span></button>
       </div>
     </section>
 
-    <section class="final-cta reveal">
-      <p class="eyebrow">YOUR STORY STARTS HERE</p>
-      <h2>이름도, 형태도 없는<br>F급 코어 하나.</h2>
-      <p>당신은 무엇을 상상할 것인가?</p>
-      <a class="button primary" href="#top">처음부터 다시 보기</a>
-    </section>
+    <section class="closing reveal"><p class="kicker">YOUR EGO WEAPON BEGINS HERE</p><h2>이름도, 형태도 없는<br><span>F급 코어 하나.</span></h2><p>아르케온의 모든 신입생은 같은 곳에서 시작한다.</p><a class="button primary" href="#top">처음으로</a></section>
   </main>
-
-  <footer>
-    <div><b>EGO WEAPON ACADEMY</b><span>World Guide · 2077</span></div>
-    <a href="https://github.com/namyamnamyam/EgoWeapon" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
-  </footer>
+  <footer class="site-footer"><div><strong>EGO WEAPON ACADEMY</strong><span>WORLD ARCHIVE · 2077</span></div><a href="https://github.com/namyamnamyam/EgoWeapon" target="_blank" rel="noreferrer">GitHub Repository ↗</a></footer>
+  <div class="modal" id="characterModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName"><div class="modal-backdrop" data-close-modal></div><div class="modal-panel"><button class="modal-close" type="button" data-close-modal aria-label="닫기">×</button><div class="modal-image-wrap"><div id="modalImage" class="modal-portrait sprite" role="img" aria-label=""></div></div><div class="modal-copy"><p class="modal-role" id="modalRole"></p><h3 id="modalName"></h3><p class="modal-summary" id="modalSummary"></p><dl class="modal-specs"><div><dt>에고 웨폰</dt><dd id="modalWeapon"></dd></div><div><dt>등급</dt><dd id="modalRank"></dd></div><div><dt>보관 형태</dt><dd id="modalStorage"></dd></div><div><dt>대표 명령</dt><dd id="modalCommands"></dd></div></dl></div></div></div>
   <script src="assets/app.js"></script>
 </body>
 </html>
