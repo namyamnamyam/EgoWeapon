@@ -1,11 +1,17 @@
-const progress=document.getElementById('progressBar');
-const menuButton=document.getElementById('menuButton');
-const nav=document.getElementById('siteNav');
-window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?scrollY/max*100:0)+'%';},{passive:true});
-menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',open)});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const filters=document.querySelectorAll('.filter');
-const cards=document.querySelectorAll('.character-card');
-filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(card=>card.classList.toggle('hide',f!=='all'&&card.dataset.group!==f));}));
+const characterData = {
+  han: {name:'한서윤',role:'1학년 신입생 · 입학시험 최종 1위',sprite:'sprite-0',summary:'검은 장발과 붉은 적안. 무뚝뚝하고 차분하며 감정 표현이 적지만, 경쟁 상황에서는 은근한 승부욕이 드러난다. 가까워진 뒤에는 의외로 말이 많아지는 타입.',weapon:'무명 · 장검',rank:'F급 (초기)',storage:'오른쪽 귀의 은색 칼 모양 귀걸이',commands:'베어'},
+  kang: {name:'강세린',role:'1학년 신입생',sprite:'sprite-1',summary:'빨간 포니테일과 금안. 쾌활하고 운동과 스포츠를 좋아하며 실전에 적극적인 전투광. 힘과 돌파를 즐기는 직선적인 성향.',weapon:'브레이커 · 대검',rank:'F급 (초기)',storage:'빨간 스포츠 밴드',commands:'밀어붙어'},
+  baek: {name:'백유나',role:'1학년 신입생',sprite:'sprite-2',summary:'금발 단발과 푸른 청안. 장난기가 많고 친화력이 좋으며 눈치가 빠르다. 직접적인 화력보다는 구속과 움직임 제한에 능숙하다.',weapon:'바인드 · 사슬',rank:'F급 (초기)',storage:'은색 체인 팔찌',commands:'묶어'},
+  cha: {name:'차예린',role:'1학년 신입생',sprite:'sprite-3',summary:'검은 단발과 보라색 자안. 무감정하고 차가우며 말수가 적다. 쉽게 마음을 열지 않지만 사실 누구보다 외로운 인물.',weapon:'제로 · 권총',rank:'F급 (초기)',storage:'검은 반지',commands:'맞춰'},
+  arin: {name:'서아린',role:'1학년 신입생',sprite:'sprite-4',summary:'은빛 장발과 하늘색 눈동자. 우아하고 차분하며 자존심이 높다. 재벌집 막내딸로 금전적인 지원을 충분히 받고 있다.',weapon:'피어스 · 레이피어',rank:'F급 (초기)',storage:'은색 만년필',commands:'꿰뚫어'},
+  gayoung: {name:'윤가영',role:'실전 전투 · 게이트 실습 담당 교수',sprite:'sprite-5',summary:'검은 포니테일과 금안. 엄격하고 냉정한 실전주의자. 이론보다는 실제 상황에서 몸으로 배우는 교육을 중시한다.',weapon:'임페일 · 장창',rank:'S급',storage:'삼색 볼펜',commands:'찔러 · 쳐내 외'},
+  yuhwa: {name:'서유화',role:'명령 등록 · 명령 제어 담당 교수',sprite:'sprite-6',summary:'백발 장발과 핏빛 적안. 평소 학생들에게 친근하고 다정하지만 전투에 돌입하면 극도로 공격적으로 변하며 피아식별이 크게 흐려진다. 본인도 위험성을 알아 학생이 위험하지 않다면 직접 나서지 않는다.',weapon:'카니지 · 대낫',rank:'S급',storage:'붉은 펜던트',commands:'찢어 · 죽여 외'},
+  leonia: {name:'레오니아',role:'아르케온 에고 웨폰 아카데미 학장',sprite:'sprite-7',summary:'짙은 청발과 청록안. 평소 느긋하고 관대하지만 학생들이 실제로 위험해지는 순간에는 누구보다 철저하고 엄격하다. 약 300kg의 초대형 닻을 자유자재로 휘두른다.',weapon:'리바이어던 · 초대형 닻',rank:'SS급',storage:'왼쪽 귀의 닻 모양 남색 귀걸이',commands:'박혀 · 내려쳐 · 눌러 외'},
+  yuria: {name:'유리아',role:'2학년',sprite:'sprite-8',summary:'핑크 장발과 푸른 눈. 착하고 다정하며 후배들을 굉장히 귀여워한다. 장거리에서 추적과 궤도 제어를 활용하는 활 사용자.',weapon:'아르테미스 · 활',rank:'B급',storage:'손목에 묶어 둔 분홍색 리본 머리끈',commands:'쫓아 · 꺾여 외'}
+};
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -30px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const tabButtons=document.querySelectorAll('.character-tabs button'),characterCards=document.querySelectorAll('.character-card');tabButtons.forEach(button=>button.addEventListener('click',()=>{tabButtons.forEach(b=>b.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;characterCards.forEach(card=>card.hidden=filter!=='all'&&card.dataset.group!==filter)}));
+const modal=document.getElementById('characterModal'),modalImage=document.getElementById('modalImage'),modalRole=document.getElementById('modalRole'),modalName=document.getElementById('modalName'),modalSummary=document.getElementById('modalSummary'),modalWeapon=document.getElementById('modalWeapon'),modalRank=document.getElementById('modalRank'),modalStorage=document.getElementById('modalStorage'),modalCommands=document.getElementById('modalCommands');
+function openCharacter(key){const c=characterData[key];if(!c)return;modalImage.className=`modal-portrait sprite ${c.sprite}`;modalImage.setAttribute('aria-label',c.name);modalRole.textContent=c.role;modalName.textContent=c.name;modalSummary.textContent=c.summary;modalWeapon.textContent=c.weapon;modalRank.textContent=c.rank;modalStorage.textContent=c.storage;modalCommands.textContent=c.commands;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open')}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open')}
+characterCards.forEach(card=>card.addEventListener('click',()=>openCharacter(card.dataset.character)));document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',closeModal));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
